@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class SignOnController {
     @GetMapping("/signOn")
     public String signOn() {
-        return "signOn.html";
+        return "signOn";
     }
 }

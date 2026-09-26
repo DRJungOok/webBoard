@@ -3,13 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" th:href="@{static/style/fragment/footer.css}">
-    <link rel="stylesheet" th:href="@{static/style/fragment/header.css}">
+    <link rel="stylesheet" th:href="@{style/fragments/footer.css}">
+    <link rel="stylesheet" th:href="@{style/fragments/header.css}">
     <title>web board</title>
 </head>
 <body>
-    <th:block th:replace="~{fragment/header::headerFragment}"></th:block>
-    <main></main>
-    <th:block th:replace="~{fragment/footer::footerFragment"></th:block>
+    <th:block th:replace="~{fragments/header::headerFragment}"></th:block>
+    <main>
+        <p class="post-list">
+            <ul>
+                <li></li>
+            </ul>
+        </p>
+    </main>
+    <th:block th:replace="~{fragments/footer::footerFragment}"></th:block>
 </body>
 </html>

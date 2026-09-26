@@ -4,19 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" th:href="@{/style/fragments/header.css}">
 </head>
 
 <body>
 
-    <header class="header" th:fragment="headerFragment">
-        <nav>
-            <p class="page-title">web board</p>
-            <div class="sign-group">
-                <button class="sign-in" id="signIn">signIn</button>
-                <button class="sign-up" id="signUp">signUp</button>
-            </div>
-        </nav>
-    </header>
-</body>
+<header class="header" th:fragment="headerFragment">
+    <nav class="nav">
 
+        <!-- logo -->
+        <a href="/" class="page-title">
+            web board
+        </a>
+
+        <!-- search -->
+        <div class="search-bar">
+            <input
+                type="text"
+                id="inputSearch"
+                class="search-input"
+                placeholder="search post..."
+            >
+            <button class="search-button" type="button">
+                🔍
+            </button>
+        </div>
+
+        <!--sign in / sign on -->
+        <div class="sign-group">
+            <button class="sign-in" id="signIn">
+                sign in
+            </button>
+
+            <button class="sign-up" id="signUp">
+                sign on
+            </button>
+        </div>
+
+    </nav>
+</header>
+
+</body>
 </html>

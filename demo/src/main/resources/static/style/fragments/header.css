@@ -1,8 +1,261 @@
 @charset "UTF-8";
 
-header {
-    padding: 0;
+/* =========================
+ default settings
+========================= */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
     margin: 0;
+    padding: 0;
+    font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        "Noto Sans KR",
+        sans-serif;
+
+    background-color: #f8fafc;
+    color: #0f172a;
+}
+
+
+/* =========================
+   Header
+========================= */
+
+.header {
+    width: 100%;
+    height: 80px;
+
+    background: rgba(255, 255, 255, 0.9);
+    border-bottom: 1px solid #e2e8f0;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    backdrop-filter: blur(12px);
+}
+
+
+/* =========================
+   Navigation
+========================= */
+
+.nav {
+    width: min(1200px, calc(100% - 40px));
+    height: 100%;
+    margin: 0 auto;
+
     display: flex;
-    position: absolute;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 40px;
+}
+
+
+/* =========================
+   Logo
+========================= */
+
+.page-title {
+    flex-shrink: 0;
+
+    color: #0f172a;
+    text-decoration: none;
+
+    font-size: 28px;
+    font-weight: 800;
+    letter-spacing: -1.5px;
+
+    transition: color 0.2s ease;
+}
+
+.page-title:hover {
+    color: #2563eb;
+}
+
+
+/* =========================
+   Search
+========================= */
+
+.search-bar {
+    width: min(420px, 40vw);
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+
+    background-color: #f1f5f9;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+
+    padding: 0 6px 0 16px;
+
+    transition:
+        background-color 0.2s ease,
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.search-bar:focus-within {
+    background-color: #ffffff;
+    border-color: #93c5fd;
+
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.08);
+}
+
+.search-input {
+    width: 100%;
+    height: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    color: #0f172a;
+    font-size: 14px;
+}
+
+.search-input::placeholder {
+    color: #94a3b8;
+}
+
+
+/* search button*/
+
+.search-button {
+    width: 32px;
+    height: 32px;
+
+    border: none;
+    border-radius: 8px;
+
+    background: transparent;
+
+    cursor: pointer;
+
+    font-size: 15px;
+
+    transition: background-color 0.2s ease;
+}
+
+.search-button:hover {
+    background-color: #e2e8f0;
+}
+
+
+/* =========================
+   Sign Buttons
+========================= */
+
+.sign-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    flex-shrink: 0;
+}
+
+.sign-group button {
+    height: 38px;
+
+    padding: 0 15px;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.15s ease;
+}
+
+.sign-group button:active {
+    transform: scale(0.97);
+}
+
+
+/* 로그인 */
+
+.sign-in {
+    color: #475569;
+    background-color: transparent;
+
+    border: 1px solid transparent;
+}
+
+.sign-in:hover {
+    color: black;
+    background-color: whitesmoke;
+}
+
+
+/* 회원가입 */
+
+.sign-up {
+    color: white;
+    background-color: #2563eb;
+
+    border: 1px solid #2563eb;
+}
+
+.sign-up:hover {
+    background-color: #1d4ed8;
+    border-color: #1d4ed8;
+}
+
+
+/* =========================
+   Mobile
+========================= */
+
+@media (max-width: 768px) {
+
+    .header {
+        height: auto;
+    }
+
+    .nav {
+        width: calc(100% - 24px);
+
+        padding: 14px 0;
+
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 14px;
+    }
+
+    .page-title {
+        font-size: 23px;
+    }
+
+    .search-bar {
+        grid-column: 1 / -1;
+        grid-row: 2;
+
+        width: 100%;
+    }
+
+    .sign-group {
+        gap: 4px;
+    }
+
+    .sign-group button {
+        padding: 0 10px;
+        font-size: 13px;
+    }
 }
